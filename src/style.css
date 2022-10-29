@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  background-color: #23272A;
+}
+
+:root {
+  --primary-color: #5865F2;
+  --secondary-color: #454FBF;
+  --light-color: #FFFFFF;
+  --contrast-color: #23272A;
+}
+
+.container {
+  background: #23272A;
+  min-height: 100vh;
+  font-family: sans-serif;
+}
+
+article {
+  margin-left: 116px;
+}
+
+nav a {
+  font-size: 20px;
+  color: var(--light-color);
+  padding: 1rem;
+  text-align: center;
+}
+
+nav a:hover {
+  font-size: 22px;
+  transition: all ease-in 0.1s;
+}
+
+nav {
+  position: fixed;
+  left: 0;
+  border-width: 0px;
+  width: 110px;
+  z-index: 50;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  height: 100vh;
+  background-color: var(--secondary-color);
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: all ease-in 0.3s;
+
+}
+
+
+nav:hover {
+  width: 190px;
+  transition: all ease-in 0.2s;
+}
+
+section {
+  position: absolute;
+  top: 0;
+  height: 100vh;
+
+}
+
+.sidebar {
+  margin: 0;
+  background-color: #23272A;
+  height: 100vh;
+  color: #fff;
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+section h1 {
+  color: var(--light-color);
+  font-size: 50px;
+  text-transform: uppercase;
+  text-overflow: clip;
+  overflow: hidden;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  align-items: center;
+  grid-template-columns: repeat(auto-fit, 200px);
+}
+
+.card {
+  border-radius: 1rem;
+  display: block;
+  width: 100%;
+  background: #3c454d;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.18);
+  height: 100%;
+  overflow: hidden;
+}
+
+
+.card a img {
+  background: #3c454d;
+  /* padding: 10px; */
+  padding-top: 1rem;
+  height: 280px;
+  image-rendering: optimizeQuality;
+  vertical-align: top;
+  object-fit: cover;
+  object-position: center;
+
+
+}
+
+.card a h2 {
+  background: #3c454d;
+  height: 100%;
+  border-radius: 2rem;
+  height: 50px;
+  font-size: 1rem;
+  color: var(--light-color);
+  vertical-align: bottom;
+  text-decoration: none;
+}
