@@ -9,7 +9,7 @@ pub mod omdb_key
 
     impl OmdbKey
     {
-        pub fn get() -> Option<OmdbKey>
+        pub fn get() -> Result<OmdbKey, String>
         {
             let filename = UserDirs::new()
                 .unwrap()
@@ -20,16 +20,16 @@ pub mod omdb_key
 
             if !filename.exists()
             {
-                return None;
+                return Err(format!("No API key file found at {}", filename.display()));
             }
 
-            let key = match fs::read_to_string(filename)
+            let key = match fs::read_to_string(filename.clone())
             {
                 Ok(x) => String::from(x.trim()),
-                Err(_) => return None,
+                Err(_) => return Err(format!("Couldn't read API key from {}", filename.display())),
             };
 
-            Some(OmdbKey::Key(key))
+            Ok(OmdbKey::Key(key))
         }
     }
 }

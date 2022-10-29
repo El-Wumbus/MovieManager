@@ -1,8 +1,12 @@
 mod Metadata;
 mod key;
-use Metadata::metadata;
-use key::omdb_key;
+mod libary;
+mod Display;
 
+use directories::UserDirs;
+use key::omdb_key;
+use libary::scan;
+use Display::display;
 
 #[macro_use]
 extern crate savefile_derive;
@@ -14,6 +18,7 @@ extern crate savefile_derive;
 
 
 fn main() {
+
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![get_movies_cards])
         .run(tauri::generate_context!())
@@ -23,5 +28,5 @@ fn main() {
 #[tauri::command]
 fn get_movies_cards() -> String
 {
-    String::from("Test")
+    display::make_cards()
 }
