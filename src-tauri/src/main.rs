@@ -3,6 +3,8 @@ mod key;
 mod libary;
 mod Display;
 
+use std::path::PathBuf;
+
 use directories::UserDirs;
 use key::omdb_key;
 use libary::scan;
@@ -20,7 +22,7 @@ extern crate savefile_derive;
 fn main() {
 
     tauri::Builder::default()
-        .invoke_handler(tauri::generate_handler![get_movies_cards])
+        .invoke_handler(tauri::generate_handler![get_movies_cards, add_lib, remove_lib, list_lib])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
@@ -29,4 +31,22 @@ fn main() {
 fn get_movies_cards() -> String
 {
     display::make_cards()
+}
+
+#[tauri::command]
+fn add_lib(path:String)
+{
+    libary::management::add(PathBuf::from(path));
+}
+
+#[tauri::command]
+fn remove_lib(path:String)
+{
+    libary::management::remove(PathBuf::from(path));
+}
+
+#[tauri::command]
+fn list_lib() -> String
+{
+    libary::management::list()
 }

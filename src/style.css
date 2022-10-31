@@ -1,3 +1,56 @@
+.settings_container {
+  width: 600px;
+  height: 400px;
+  position: absolute;
+
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow-y: scroll;
+  overflow-x:hidden;
+  padding-top: 5vh;
+  text-align: center;
+  align-self: center;
+
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.settings_container .text_box {
+  text-align: left;
+  font-size: 12px;
+  font-family: monospace;
+  overflow: scroll;
+  border: 2px solid;
+  border-radius: 2px;
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: .5rem;
+  height: 45px;
+}
+
+input[type=text] {
+  border: 2px solid var(--secondary-color);
+  text-align: left;
+  color: #fff;
+  margin-top: 4px;
+  padding: 6px 12px;
+  border-radius: 4px;
+  color: #fff;
+}
+
+button[type=submit] {
+  color: #fff;
+  padding: 7px;
+  width: 7rem;
+  margin-left: 5px;
+  background-color: var(--secondary-color);
+  border: 1px solid;
+  border-radius: 4px;
+}
+
 * {
   margin: 0;
   padding: 0;
